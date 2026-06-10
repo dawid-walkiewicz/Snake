@@ -52,8 +52,6 @@ class Game:
     def game_over(self):
         self.add_score_to_file(self.snake.get_score())
 
-        print("Game over!")
-
         self.snake.reset()
 
     def draw_grass(self):
@@ -149,19 +147,15 @@ class Game:
                     if event.key == pygame.K_UP:
                         if main_game.snake.direction.y != 1:
                             main_game.snake.direction = Vector2(0, -1)
-                            print("up")
                     if event.key == pygame.K_DOWN:
                         if main_game.snake.direction.y != -1:
                             main_game.snake.direction = Vector2(0, 1)
-                            print("down")
                     if event.key == pygame.K_LEFT:
                         if main_game.snake.direction.x != 1:
                             main_game.snake.direction = Vector2(-1, 0)
-                            print("left")
                     if event.key == pygame.K_RIGHT:
                         if main_game.snake.direction.x != -1:
                             main_game.snake.direction = Vector2(1, 0)
-                            print("right")
 
                     if event.key == pygame.K_ESCAPE:
                         self.snake.stop()
